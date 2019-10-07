@@ -18,7 +18,7 @@ func main(){
 	})
 
 	c.OnHTML(".item-description-text>p", func(e *colly.HTMLElement){
-		fmt.Println("ТЕКСТ ОБЪЯВЛЕНИЯ:", e.Text)
+		fmt.Println("The text:", e.Text, "\n\n")
 	})
 
 	var link_main string
