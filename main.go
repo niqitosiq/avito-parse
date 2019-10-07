@@ -17,8 +17,9 @@ func main(){
 		c.Visit(e.Request.AbsoluteURL(link))
 	})
 
-	c.OnHTML(".item-description-text>p", func(e *colly.HTMLElement){
-		fmt.Println("The text:", e.Text, "\n\n")
+	c.OnHTML(".item-view-content", func(e *colly.HTMLElement){
+		fmt.Println("Name:", e.ChildText(".title-info-title-text"))
+		fmt.Println("Description:", e.ChildText(".item-description-text"), "\n\n")
 	})
 
 	var link_main string
